@@ -9,8 +9,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type" : "module",
+  "type": "module",
   "dependencies": {
-    "express": "^5.2.1"
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "nodeman": "^1.1.2"
   }
 }

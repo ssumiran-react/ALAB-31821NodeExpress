@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <h3>Players Info:</h3>
+    <button>Add A Player</button>
+    <hr>
+    <section>
+        <% for (let p of players) { %>
+            <lebel>Number: <a href="/players/<%= p.id %>"> <%= p.id %> </a> </lebel>
+            <br>
+            <lebel>Full Name: <%= p.firstname + " " + p.lastname %> </lebel>
+            <lebel>| Position: <%= p.position %> </lebel>
+            <hr>
+        <% } %>
+    </section>
+</body>
+
+</html>
