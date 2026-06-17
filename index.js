@@ -1,5 +1,6 @@
 import express from "express"
 import players from "./data/playerData.js";
+import playerRoute from "./routes/playerRoute.js";
 
 const port = 3000;
 const app = express();
@@ -11,7 +12,7 @@ app.get('/home', (req, res) => {
     res.render('home', { players })
 })
 
-
+app.use("/player", playerRoute);
 
 // create a route
 app.get("/", (req, res) => {

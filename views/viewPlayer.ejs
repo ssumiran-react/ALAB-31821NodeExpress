@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <h3>Player: <%= eachPlayer.id %>  <%= eachPlayer.firstname + " " + eachPlayer.lastname %></h3>
+    <section>
+        <lebel><strong>Position:</strong> <%= eachPlayer.position %> </lebel>
+        <div>
+            <img src="<%= eachPlayer.image %>" alt="<%= eachPlayer.firstname + " " + eachPlayer.lastname %>"/>
+        </div>
+        
+    </section>
+</body>
+
+</html>
