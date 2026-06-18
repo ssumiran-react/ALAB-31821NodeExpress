@@ -6,7 +6,7 @@ const router = express.Router();
 import path from 'path';
 import fs from 'fs';
 
-express.static('public');//path.join(__dirname, 'public'));
+//express.static('public');//path.join(__dirname, 'public'));
 export let eachPlayer = {};
 
 router

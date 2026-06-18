@@ -8,7 +8,7 @@ const app = express();
 // Setup View Engine
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
-
+app.use('/public', express.static('public'));
 const logReq = (req, res, next) => {
   console.log("Request Received ", new Date());
   next();
