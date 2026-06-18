@@ -9,6 +9,12 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 
+const logReq = (req, res, next) => {
+  console.log("Request Received");
+  next();
+};
+app.use(logReq);
+
 app.route("/home")
     .get( (req, res) => {
         res.render('home', { players })
