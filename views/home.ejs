@@ -8,19 +8,53 @@
 </head>
 
 <body>
-
     <h3>Players Info:</h3>
-    <button>Add A Player</button>
+    <section id="addPlayerSec" hidden = true>
+        <div id="addPlayerDiv"  >
+        <form id="addPlayerForm" action="http://localhost:3000/home" method="POST">
+            <lebel><strong>Number:</strong> </lebel>
+            <input  type="text" id="num" name="num" >
+            <br>
+            <lebel><strong>Last Name:</strong></lebel> 
+            <input  type="text" id="lastName" name="lastName" >
+            <lebel><strong>First Name:</strong></lebel> 
+            <input type="text" id="firstName" name="firstName" >
+            <br>
+            <lebel><strong>Position:</strong></lebel>
+            <input type="text" id="pos" name="pos" >
+            <br>
+            <button type="submit">Submit</button>
+            
+        </form> 
+        <button id="cancel" type="button" onclick="addPlayerBtn('cancel')">Cancel</button>
+        <br>
+        
+        </div>
+    </section>
+    <button id="addPlayer" onclick="addPlayerBtn('add')" type="button">Add Player</button> 
+    <div id="message"></div>
     <hr>
     <section>
         <% for (let p of players) { %>
-            <lebel>Number: <a href="/player/<%= p.id %>"> <%= p.id %> </a> </lebel>
+            <lebel><strong>Number:</strong> <a href="/player/<%= p.id %>"> <%= p.id %> </a> </lebel>
             <br>
-            <lebel>Full Name: <%= p.firstname + " " + p.lastname %> </lebel>
-            <lebel>| Position: <%= p.position %> </lebel>
+            <lebel><strong>Full Name:</strong> <%= p.firstname + " " + p.lastname %> </lebel>
+            <lebel>| <strong>Position:</strong> <%= p.position %> </lebel>
             <hr>
         <% } %>
     </section>
+    <script>
+        function addPlayerBtn(val){
+            if(val == "add"){ 
+                document.getElementById("addPlayer").disabled = true;
+                document.getElementById("addPlayerSec").hidden = false;
+            }else{
+                document.getElementById("addPlayer").disabled = false; 
+                document.getElementById("addPlayerSec").hidden = true;
+            }
+                
+        }
+    </script>
 </body>
 
 </html>
