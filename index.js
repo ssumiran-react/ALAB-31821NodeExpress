@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 
 const logReq = (req, res, next) => {
-  console.log("Request Received");
+  console.log("Request Received ", new Date());
   next();
 };
 app.use(logReq);
